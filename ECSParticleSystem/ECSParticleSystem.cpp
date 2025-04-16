@@ -1,29 +1,42 @@
-
 #include <iostream>
-#include <raylib.h>
+#include <string>
 
-int main()
+#include "raylib.h"
+#include "SimpleSpawnSystem.h"
+
+int main(void)
 {
-    const int screenWidth = 1920;
-    const int screenHeight = 1080;
+    InitWindow(1920, 1080, "Particle System");
 
-    InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
+	Texture2D particleTex = LoadTexture("Resources/Particle-Effect-2.png");
+	SimpleSpawnSystem system(1000000, particleTex);
+	auto particles = system.GetParticles(); //reference
+	Color color = { 0, 255, 120, 255 };
 
-    SetTargetFPS(60);          
-   
-    while (!WindowShouldClose()) 
-    {
+    while (!WindowShouldClose()) {
+        // Spawn particles at mouse position
+        // if (IsMouseButtonDown(MOUSE_LEFT_BUTTON) || IsKeyDown(KEY_SPACE)) {
+        //     for (int i = 0; i < 100; ++i) {  // Burst spawn
+        //         system.SpawnParticle(GetMousePosition());
+        //     }
+        // }
+
+        // for (int i = 0; i < particles.size(); ++i) {  // Burst spawn
+        //     system.SpawnParticle(GetMousePosition());
+        // }
+
+        system.UpdateParticles(10);
+
         BeginDrawing();
-
-        ClearBackground(RAYWHITE);
-
-        DrawText("Congrats! You created your first window!", 800, 500, 20, LIGHTGRAY);
-
+        ClearBackground(BLACK);
+        system.DrawParticles();
+        DrawFPS(10, 10);
+        std::string message = std::to_string(particles.size()) + " Particles";
+        DrawText(message.c_str(), 20, 60, 20, color);
         EndDrawing();
     }
 
-  
+    UnloadTexture(particleTex);
     CloseWindow();
-
     return 0;
 }
