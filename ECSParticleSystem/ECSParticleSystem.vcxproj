@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ECSParticleSystem.cpp" />
+    <ClCompile Include="ECSSpawnSystem.cpp" />
     <ClCompile Include="SimpleSpawnSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +142,7 @@
     <Image Include="Resources\Particle-Effect-2.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ECSSpawnSystem.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="SimpleSpawnSystem.h" />
   </ItemGroup>

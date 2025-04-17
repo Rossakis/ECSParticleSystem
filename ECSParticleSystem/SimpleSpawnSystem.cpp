@@ -6,11 +6,6 @@ SimpleSpawnSystem::SimpleSpawnSystem(size_t maxParticles, Texture2D texture) : p
 
     baseTextureSize = (texture.width + texture.height) / 2.0f;
     particles.resize(maxParticles);
-    //
-    // for (size_t i = 0; i < maxParticles; ++i) {
-    //     particles[i] = CreateParticle();
-    //     freeIndices.push_back(i);
-    // }
 
     for (auto& p : particles) {
         ResetParticle(p);
@@ -58,20 +53,7 @@ bool SimpleSpawnSystem::SpawnParticle(Vector2 position) {
     return true;
 }
 
-// Update all active particles
 void SimpleSpawnSystem::UpdateParticles(float gravity, float decayRate) {
-    // for (auto& p : particles) {
-    //     if (p.active) {
-    //         p.position.y += gravity;  // Simple gravity
-    //         p.alpha -= decayRate;
-    //
-    //         if (p.alpha <= 0.0f) {
-    //             p.active = false;
-    //             freeIndices.push_back(&p - &particles[0]);  // Recycle index
-    //         }
-    //     }
-    // }
-
     for (auto& p : particles) {
         p.position.y += gravity * (1.0f + GetRandomValue(-10, 10) / 100.0f);
         p.position.x += 0.3f;
