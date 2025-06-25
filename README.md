@@ -52,6 +52,66 @@ Follow these steps to set up Raylib and dependencies:
 
 ---
 
+---
+
+## **New Features**
+
+### 1. **Performance Data Logging**
+- After each simulation run, the application writes a detailed performance log to a file.
+- The log includes:
+  - Simulation time (seconds)
+  - Particle count
+  - Average FPS
+  - Whether ECS was used
+  - Machine specs (CPU, RAM, GPU)
+
+### 2. **Output Directory**
+- All performance logs are saved in a dedicated `OutputData` folder inside the application's output directory.
+- The log file is named according to the simulation type, e.g., `ECS_performance_log.txt` or `Array_performance_log.txt`.
+
+### 3. **Simulation Completion and User Feedback**
+- When a simulation completes, the application **returns to the main menu** instead of closing.
+- An overlay message informs you that the data was successfully written, showing the exact file path.
+
+### 4. **Premature Exit Handling**
+- If you exit the simulation early (by pressing ESC), the application returns to the main menu and displays a message indicating that the simulation was exited prematurely and **no data was saved**.
+
+### 5. **ESC Key Behavior**
+- The default raylib behavior of closing the window with ESC is disabled.
+- Pressing ESC during simulation now returns you to the main menu, not exiting the application.
+
+---
+
+## **How to Use**
+
+1. **Select Simulation Type:**  
+   Choose between "Run ECS Particles" and "Run Array Particles" from the main menu.
+
+2. **Set Parameters:**  
+   Enter the number of particles and the simulation duration in seconds.
+
+3. **Run Simulation:**  
+   The simulation will run for the specified time, then return to the main menu and show a message with the output file location.
+
+4. **Exit Simulation Early:**  
+   Press ESC during the simulation to return to the main menu. A message will inform you that no data was saved.
+
+---
+
+## **Output Example**
+
+After a successful simulation, you will find a file with data like this:
+
+Simulation Time: 5 seconds
+Average FPS: 11073.6
+ECS Used: No
+Machine Specs:
+  CPU: Intel(R) Core(TM) i9-14900K
+  RAM: 32484 MB
+  GPU: ATI Technologies Inc. AMD Radeon RX 7900 XTX
+
+This can be a great tool for analyzing performance differences between ECS and array-based systems, and the capabilities of the CPU.
+
 ### Other Platforms (CMake)
 
 While this repository is tailored for Visual Studio, you can use CMake to build on other platforms:
