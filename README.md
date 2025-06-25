@@ -63,7 +63,8 @@ Add the x64-windows triplet if needed:
 
 vcpkg install raylib:x64-windows
 
-Visual Studio should now automatically find and link Raylib via vcpkg.
+**Visual Studio should now automatically find and link Raylib via vcpkg.**
+
 ---
 
 ## **New Features**
