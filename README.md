@@ -10,7 +10,7 @@ Both systems use [Raylib](https://www.raylib.com/) for graphics rendering. The p
 
 ## Project Structure
 
-- `ECSParticleSystem/` — Source code for both ECS and array-based particle systems
+- `ECSParticleSystem/` â€” Source code for both ECS and array-based particle systems
 - Uses **C++20** standard
 - Relies on **Raylib** for rendering and **EnTT** for ECS
 
@@ -49,8 +49,6 @@ Follow these steps to set up Raylib and dependencies:
 
 - Open the solution in Visual Studio 2022
 - Build and run the project
-
----
 
 ---
 
