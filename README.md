@@ -50,6 +50,25 @@ Follow these steps to set up Raylib and dependencies:
 - Open the solution in Visual Studio 2022
 - Build and run the project
 
+#### (5.) Alternatively, you can install Raylib via vcpkg:
+1. Install Raylib using vcpkg
+
+If you prefer package management, you can use vcpkg:
+
+git clone https://github.com/microsoft/vcpkg.git
+cd vcpkg
+./bootstrap-vcpkg.bat
+vcpkg install raylib
+
+#### (6.0) After installing, integrate vcpkg with Visual Studio:
+
+./vcpkg integrate install
+
+Add the x64-windows triplet if needed:
+
+vcpkg install raylib:x64-windows
+
+Visual Studio should now automatically find and link Raylib via vcpkg.
 ---
 
 ## **New Features**
