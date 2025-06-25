@@ -9,9 +9,8 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{7dffbc88-3c34-44b1-8f90-0bd205e3c28a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,16 +23,17 @@
     <ClCompile Include="ECSSpawnSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PerformanceLogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="Resources\Particle-Effect.png">
-      <Filter>Resource Files</Filter>
+    <CopyFileToFolders Include="Resources\Particle-Effect-2.png">
+      <Filter>Assets</Filter>
     </CopyFileToFolders>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Resources\Particle-Effect-2.png">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <CopyFileToFolders Include="Resources\Particle-Effect.png">
+      <Filter>Assets</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SimpleSpawnSystem.h">
@@ -43,6 +43,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ECSSpawnSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PerformanceLogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
