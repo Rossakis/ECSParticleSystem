@@ -239,12 +239,9 @@ int main(void)
         }
         else // Simulation running
         {
-            float fps = GetFPS();
-            perfLogger.LogFrame(fps, useECS);
-
-            // Timer
             float elapsed = 0.0f;
             if (simulationActive) {
+                perfLogger.LogFrame(GetFPS(), useECS);
                 auto now = std::chrono::steady_clock::now();
                 elapsed = std::chrono::duration<float>(now - simulationStart).count();
                 float timeLeft = simulationDuration - elapsed;
